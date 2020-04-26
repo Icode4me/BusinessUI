@@ -68,16 +68,16 @@ namespace ActivityLogger
                 //Authentication.
                 //This is where the valid email account comes into play. You must have a valid email account(with password) to give our program a place to send the mail from.
 
-                NetworkCredential cred = new NetworkCredential("helpdeskondemand@gmail.com", "iftywlylkuwibfms");
+                NetworkCredential cred = new NetworkCredential("your@gmail.com", "less secure password from gmail apps");
 
                 //To send an email we must first create a new mailMessage(an email) to send.
                 MailMessage Msg = new MailMessage();
 
                 // Sender e-mail address.
-                Msg.From = new MailAddress("helpdeskondemand@gmail.com");//Nothing But Above Credentials or your credentials (*******@gmail.com)
+                Msg.From = new MailAddress("your@gmail.com");//Nothing But Above Credentials or your credentials (*******@gmail.com)
 
                 // Recipient e-mail address.
-                Msg.To.Add("mohamedhafez@outlook.com");
+                Msg.To.Add("who@sendingto.com");
 
                 // Assign the subject of our message.
                 Msg.Subject = "Msg from ActivityLogger";
