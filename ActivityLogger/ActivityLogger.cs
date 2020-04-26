@@ -68,16 +68,16 @@ namespace ActivityLogger
                 //Authentication.
                 //This is where the valid email account comes into play. You must have a valid email account(with password) to give our program a place to send the mail from.
 
-                NetworkCredential cred = new NetworkCredential("your@gmail.com", "less secure password from gmail apps");
+                NetworkCredential cred = new NetworkCredential("your gmail email ", "google less secure apps password");
 
                 //To send an email we must first create a new mailMessage(an email) to send.
                 MailMessage Msg = new MailMessage();
 
                 // Sender e-mail address.
-                Msg.From = new MailAddress("your@gmail.com");//Nothing But Above Credentials or your credentials (*******@gmail.com)
+                Msg.From = new MailAddress("your gmail email address");//Nothing But Above Credentials or your credentials (*******@gmail.com)
 
                 // Recipient e-mail address.
-                Msg.To.Add("who@sendingto.com");
+                Msg.To.Add("email you sending to");
 
                 // Assign the subject of our message.
                 Msg.Subject = "Msg from ActivityLogger";
@@ -111,7 +111,15 @@ namespace ActivityLogger
                 MessageBox.Show("Please Add a Note First before clicking Add button");
                 this.lblQuestion.ForeColor = Color.Red; 
             }
+
+            else if (txtCollectionBox.Text.Contains(txtNoteBox.Text)==true)//no duplication solution here
+
+            {
+                MessageBox.Show("This note and or activity has been logged already.");
+            }
+
             else
+
             {
                 txtCollectionBox.AppendText(DateTime.Now.ToString() + System.Environment.NewLine);
                 txtCollectionBox.AppendText("[*] " + txtNoteBox.Text + "." + System.Environment.NewLine);
